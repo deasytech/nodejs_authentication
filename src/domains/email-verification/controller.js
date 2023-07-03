@@ -8,6 +8,8 @@ const verifyUserEmail = async ({ email, otp }) => {
       throw Error("Invalid code passed. check your inbox or junk.");
     }
 
+    // update verified user record
+    await User.updateOne({ email }, { verified: true });
     await deleteOTP(email);
     return;
   } catch (error) {
