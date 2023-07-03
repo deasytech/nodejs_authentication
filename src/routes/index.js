@@ -3,8 +3,10 @@ const router = express.Router();
 
 const userRoutes = require("../domains/user");
 const otpRoutes = require("../domains/otp");
+const emailVerificationRoutes = require("../domains/email-verification");
 
 router.use("/user", userRoutes);
 router.use("/otp", otpRoutes);
+router.use("/email-verification", emailVerificationRoutes);
 
 module.exports = router;
